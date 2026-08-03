@@ -28,3 +28,16 @@ def expense_collect():
         else:
             print("Invalid Option")
     return expense
+def taxes_collect():
+    taxes = {}
+    while True:
+        option = input("Type 'Taxes' to add taxes and 'done' to be finished:\n").lower()
+        if option == "taxes":
+            category = input("Enter Taxes Category:\n").lower()
+            rate = float(input("Enter an Rate(in decimals e.g:10:\n"))
+            taxes[category] = rate
+        elif option == "done":
+         break
+        else:
+         print("Invalid Option")
+    return taxes
