@@ -7,8 +7,8 @@ It produces a clear, formatted **Income Statement** that resembles professional 
 ---
 
 ## Features
-- Collects income and expense data from the user.
-- Calculates **total income, total expenses, and net income**.
+- Collects income, expense,tax data from the user.
+- Calculates **total income, total expenses, net income,total tax,net income after tax reduction**.
 - Displays results in a structured, professional format.
 - Modular design with separate files:
   - `data_collect.py` → Handles input.
