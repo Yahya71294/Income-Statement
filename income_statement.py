@@ -6,7 +6,14 @@ def calculate_totals(income,expense):
     total_income = sum(income.values())
     total_expense = sum(expense.values())
     net_income = total_income-total_expense
-    return total_income,total_expense,net_income
+    # Calculate tax
+    net_tax = 0
+    for rate in taxes.values():
+        net_tax =net_tax + net_income * (rate / 100)
+
+    after_tax = net_income - net_tax
+
+    return total_income,total_expense,net_income,net_tax,after_tax
 # Display Income Statement
 def display_statement(company_name,income,expense,total_income,total_expense,net_income,year):
     width = 60
@@ -30,4 +37,15 @@ def display_statement(company_name,income,expense,total_income,total_expense,net
     print("-"*33)
     print(f"{'Net Income':<20}:|{net_income:10.2f}")
     print("-"*33)
-
+# DIsplay Tax Statement
+def tax_display(taxes, net_tax, after_tax):
+    print("Taxes:")
+    print(f"{'Category':<20}:| {'Rate (%)':<10}")
+    print("-"*33)
+    for category, rate in taxes.items():
+        print(f"{category:<20}:| {rate:>10.2f}")
+    print("-"*33)
+    print(f"{'Net Tax Amount':<20}:| {after_tax:>10.2f}")
+    print("-"*33)
+    print(f"{'Net Income After Tax':<20}:| {net_tax:>10.2f}")
+    print("-"*34)
