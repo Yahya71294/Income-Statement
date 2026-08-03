@@ -17,8 +17,7 @@ It produces a clear, formatted **Income Statement** that resembles professional 
 
 ---
 
-## Future Improvements
-- ✅ Add a **Tax Calculator** to show net income after tax.  
+## Future Improvements  
 - ✅ Expand to a **full financial statement** (Balance Sheet, Cash Flow Statement).  
 - ✅ Save results to a file (CSV, PDF).  
 - ✅ Build a **web app interface** for easier use.
