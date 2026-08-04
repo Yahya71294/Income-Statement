@@ -1,7 +1,7 @@
 # Income-Statement
 
 ## Overview
-This Python project helps small business owners calculate their **income, expenses, and net income** for a given year.  
+This Python project helps small business owners calculate their **income, expenses, tax, and net income** for a given year.  
 It produces a clear, formatted **Income Statement** that resembles professional accounting reports.
 
 ---
