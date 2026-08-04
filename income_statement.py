@@ -15,9 +15,10 @@ def calculate_totals(income,expense):
 
     return total_income,total_expense,net_income,net_tax,after_tax
 # Display Income Statement
-def display_statement(company_name,income,expense,total_income,total_expense,net_income,year):
+def display_statement(date,company_name,income,expense,total_income,total_expense,net_income,year):
     width = 60
-    print("\n" + company_name.center(width))
+    print(f"Date: {date}")
+    print( company_name.center(width))
     print((f"Yearly Income Statement for Year Ended {year}").center(width))
     print("Income:")
     print(f"{'category':<20}:| {'amount':<10}")
