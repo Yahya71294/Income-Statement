@@ -13,13 +13,13 @@ It produces a clear, formatted **Income Statement** that resembles professional 
 - Modular design with separate files:
   - `data_collect.py` → Handles input.
   - `income_statement.py` → Handles calculations and output.
+  - The `pdf.py` module handles saving income statements as PDF files using the **ReportLab** library.
   - `main.py` → Runs the program.
 
 ---
 
 ## Future Improvements  
 - ✅ Expand to a **full financial statement** (Balance Sheet, Cash Flow Statement).  
-- ✅ Save results to a file (CSV, PDF).  
 - ✅ Build a **web app interface** for easier use.
 
 ---
