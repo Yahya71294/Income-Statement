@@ -2,7 +2,7 @@
 
 
 # To collect all the totaling
-def calculate_totals(income,expense):
+def calculate_totals(income,expense,taxes):
     total_income = sum(income.values())
     total_expense = sum(expense.values())
     net_income = total_income-total_expense
