@@ -13,7 +13,7 @@ def save_statement(filename, company_name, year, date,
     # Header
     c.drawString(100, y, f"Date: {date}")
     y -= 20
-    c.drawString(100, y, f"{company_name}")
+    c.drawString(200, y, f"{company_name}")
     y -= 20
     c.drawString(100, y, f"Yearly Income Statement for Year Ended {year}")
     y -= 30
