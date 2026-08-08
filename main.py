@@ -1,10 +1,18 @@
+
 from data_collect import income_collect, expense_collect, taxes_collect
 from income_statement import calculate_totals, display_statement, tax_display
 from pdf import save_statement
-
+print("\nWelcome to the Income Statement Generator")
 # Collect basic info
-company_name = input("Enter your Company name:\n")
-year = input("Enter the year:\n")
+company_name = input("\nEnter your Company name:\n")
+
+while True:
+    year_input= input("Enter the year:\n")
+    if year_input.isdigit() and len(year_input) == 4:
+        year = int(year_input)
+        break
+    elif year_input.isdigit() and len(year_input) != 4:
+        print("Please enter a valid year(e.g, 2025")
 date = input("Enter the date (e.g., 07-Aug-2026):\n")
 
 # Collect data
