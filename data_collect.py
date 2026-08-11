@@ -7,16 +7,32 @@ def income_collect():
     while True:
         option = input("\nType 'i' to add an income or 'd' to Finish as an option:\n").lower()
         if option == "i":
-            print("Select an Income Category:\n")
+            print("These are your choices for  Income Category:\n")
             for cat in income_category:
                 print(cat)
             while True:
-                income_input = input("\nEnter Income Category:\n")
-                if income_input.replace(" ","").isalpha():
-                    category = income_input
+                cat_input = int(input("\nEnter your choice from (1 - 6):\n"))
+                if cat_input == 1:
+                    category = "Sales Revenue"
                     break
-                elif income_input != income_input.isalpha():
-                    print("Invalid Option")
+                elif cat_input == 2:
+                    category = "Service Revenue"
+                    break
+                elif cat_input == 3:
+                    category = "Rental Income"
+                    break
+                elif cat_input == 4:
+                    category = "Interest Income"
+                    break
+                elif cat_input == 5:
+                    category = "Commission Income"
+                    break
+                elif cat_input == 6:
+                    other = input("Enter your other income category:\n")
+                    category = other
+                    break
+                else:
+                    print("Invalid option. Please enter number from '1 - 6'.")
             amount = float(input("Enter an Amount\n"))
             income[category] = amount
         elif option == "d":
@@ -31,19 +47,32 @@ def expense_collect():
     while True:
         option = input("\nType 'e' to add expenses or 'd' to Finish as an option:\n").lower()
         if option == "e":
-            print("Select an Expense Category:\n")
+            print("These are your choices for Expense Category:\n")
             for cat in expense_category:
                 print(cat)
             while True:
-
-                category_input = input("\nEnter Expense Category:\n").lower()
-                if category_input.replace(" ","").isalpha():
-                    category = category_input
+                category_input = int(input("\nEnter your choice from (1 - 6):\n"))
+                if category_input == 1:
+                    category = "Rent"
                     break
-
-                elif category_input != category_input.isalpha():
-                     print("Invalid Option")
-
+                elif category_input == 2:
+                    category = "Salaries"
+                    break
+                elif category_input == 3:
+                    category = "Maintenance"
+                    break
+                elif category_input == 4:
+                    category = "Loan Payment"
+                    break
+                elif category_input == 5:
+                    category = "Utilities Expense"
+                    break
+                elif category_input == 6:
+                    other = input("Enter your other expense category:\n")
+                    category = other
+                    break
+                else:
+                    print("Invalid option. Please enter number from '1 - 6'.")
             amount = float(input("\nEnter an Amount:\n"))
             expense[category] = amount
         elif option =="d":
@@ -58,10 +87,32 @@ def taxes_collect():
     while True:
         option = input("\nType 't' to add a tax rate or 'd' to finish:\n").lower()
         if option == "t":
-            print("Select a Tax Category:\n")
+            print("These are your tax category:\n")
             for cat in tax_category:
                 print(cat)
-            category = input("\nEnter Tax Category:\n")
+            while True:
+                tax_input = int(input("\nEnter your choice from (1 - 6):\n"))
+                if tax_input == 1:
+                    category = "Individual Income Tax"
+                    break
+                elif tax_input == 2:
+                    category = "Corporate Tax"
+                    break
+                elif tax_input == 3:
+                    category = "Capital Gain Tax"
+                    break
+                elif tax_input == 4:
+                    category = "Import Duties"
+                    break
+                elif tax_input == 5:
+                    category = "Sales Tax"
+                    break
+                elif tax_input == 6:
+                    other= input("Enter your other tax category")
+                    category = other
+                    break
+                else:
+                    print("Invalid option. Please enter number from '1 - 6'.")
             rate = float(input("\nEnter Tax Rate (e.g., 10 for 10%):\n"))
             taxes[category] = rate  # always store as rate (%)
         elif option == "d":
