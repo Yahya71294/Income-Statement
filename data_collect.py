@@ -108,7 +108,7 @@ def taxes_collect():
                     category = "Sales Tax"
                     break
                 elif tax_input == 6:
-                    other= input("Enter your other tax category")
+                    other= input("Enter your other tax category:\n")
                     category = other
                     break
                 else:
