@@ -1,7 +1,7 @@
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 
-def save_statement(filename, company_name, year, date,
+def save_statement(filename, company_name, year,periodicity, date,
                    income_dict, expense_dict, taxes_dict,
                    total_income, total_expense, net_income, net_tax, after_tax):
 
@@ -15,7 +15,7 @@ def save_statement(filename, company_name, year, date,
     y -= 20
     c.drawString(200, y, f"{company_name}")
     y -= 20
-    c.drawString(100, y, f"Yearly Income Statement for Year Ended {year}")
+    c.drawString(100, y, f"{periodicity} Income Statement for Year Ended {year}")
     y -= 30
 
     # Income Section
