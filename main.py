@@ -5,7 +5,17 @@ from pdf import save_statement
 print("\nWelcome to the Income Statement Generator")
 # Collect basic info
 company_name = input("\nEnter your Company name:\n")
-
+print("Would you Like yearly or monthly statement?")
+while True:
+    m_y = input("Enter 'm' for monthly or 'y' for yearly?\n").lower()
+    if m_y == "m":
+        periodicity = "Monthly"
+        break
+    elif m_y == "y":
+        periodicity = "Yearly"
+        break
+    else:
+        print("Please enter 'm' or 'y'")
 while True:
     year_input= input("Enter the year:\n")
     if year_input.isdigit() and len(year_input) == 4:
@@ -24,14 +34,14 @@ taxes = taxes_collect()            # dictionary
 total_income, total_expense, net_income, net_tax, after_tax = calculate_totals(income, expense, taxes)
 
 # Show on console
-display_statement(date ,company_name,income,expense,total_income,total_expense,net_income,year)
+display_statement(date ,company_name,periodicity,income,expense,total_income,total_expense,net_income,year)
 tax_display(taxes,net_tax, after_tax)
 
 # Ask user if they want a PDF
 choice = input("Do you want to save this statement as PDF? (yes/no): ").lower()
 if choice == "yes":
     filename = f"{company_name}_{year}_{date}_statement.pdf"
-    save_statement(filename, company_name, year, date,
+    save_statement(filename, company_name,periodicity, year, date,
                    income, expense, taxes,
                    total_income, total_expense, net_income, net_tax, after_tax)
     print(f"PDF saved as {filename}")
